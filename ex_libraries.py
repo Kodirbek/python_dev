@@ -25,12 +25,49 @@ tarjimon = Translator() # Translator bu maxsus klass (tarjimon esa obyekt)
 # print(tarjima_uz.text)
 
 
-msg = "Tarjima uchun so'z kiriting (chiqish uchun 'q'ni kiriting): "
+# msg = "Tarjima uchun so'z kiriting (chiqish uchun 'q'ni kiriting): "
 
-while True:
-    text = input(msg)
-    if text == "q":
-        break
-    else:
-        tarjima = tarjimon.translate(text, src='uz', dest='en')
-        print(tarjima.text)
+# while True:
+#     text = input(msg)
+#     if text == "q":
+#         break
+#     else:
+#         tarjima = tarjimon.translate(text, src='uz', dest='en')
+#         print(tarjima.text)
+
+
+# # REQUESTS
+import requests
+from pprint import pprint
+# r = requests.get('https://kun.uz/news/main')
+# pprint(r.text)
+
+
+#RESTCOUNTRIES API
+country = 'Uzbekistan'
+url = f"https://restcountries.com/v3.1/name/{country}"
+r = requests.get(url)
+r_json = r.json()[0]
+#print(r_json.keys())
+#print(r_json['capital'])
+pprint(r_json)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
