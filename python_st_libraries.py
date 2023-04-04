@@ -6,6 +6,7 @@ This is a temporary script file.
 """
 import datetime as dt
 import math as m
+import re
 
 # # Bugungi sanadan boshlab 2 hafta farq bilan 10 ta sanani konsolga chiqaring
 # bugun = dt.date.today()
@@ -42,5 +43,41 @@ import math as m
 # otgan_vaqt(1964, 11, 25)
 
 
-# Foydalanuvchidan telefon raqamini kiritishni so'rang. 
-# Kiritlgan qiymatni andoza yordamida tekshiring
+# # Foydalanuvchidan telefon raqamini kiritishni so'rang. 
+# # Kiritlgan qiymatni andoza yordamida tekshiring
+# andoza = "^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$"
+# while True:
+#     tel = input("Telefon raqamingizni kiriting: ")
+#     if re.match(andoza, tel):
+#         print("Qabul qilindi.")
+#         break
+#     else:
+#         print("Telefon raqam formati not'g'ri.")
+
+
+# Berilgan matndan veb sahifa manzilini ajratib olyuvchi funksiya yozing. 
+# Quyidagi matndan namuna sifatida foydalanishingiz mumkin:
+    
+matn = """Assalom alaykum hurmatli do'stlar. Navbatdagi darsimiz YouTubega yuklandi: https://youtu.be/vsxJPRLXpgI Ushbu 
+darsimizda unittest moduli yordamida klasslarning xususiyatlar va metodlarini tekshiruvchi dastur yozishni o'rganamiz. 
+Bugungi dars manzili: https://python.sariq.dev/testing/37-klass-test """
+
+andoza = "https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)"
+url = re.findall(andoza,matn)
+print(url)
+
+# matn = """Maqolalar  2020-yilning 20-martiga qadar rtmkonferensiya2021@mail.ru elektron pochtasida qabul qilinadi.
+# Quyidagi yo'nalishdagi maqolalar qabul qilinadi:
+# 👉 Aniq va tabiiy fanlarni zamonaviy pedagogik texnologiyalar asosida o‘qitish  metodikasi.
+# 👉 Umumta’lim  fanlarini o‘qitishda  STEAM yondashuvning o’rni va ahamiyati. """
+
+# andoza = '[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+'
+# email = re.findall(andoza,matn)
+# print(email)
+
+
+
+
+
+
+
